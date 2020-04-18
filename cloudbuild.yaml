@@ -1,10 +1,13 @@
 steps:
-  - name: 'gcr.io/cloud-builders/go'
-    args: ['install', 'sum']
-    env: ['GOPATH=./src']
-  - name: 'gcr.io/cloud-builders/go'
-    args: ['test', 'sum']
-    env: ['GOPATH=./src']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/sum', '.']
-  images: ['gcr.io/$PROJECT_ID/sum']
+  - id: "Instalando app"
+    name: "gcr.io/cloud-builders/go"
+    args: ["install", "sum"]
+    env: ["GOPATH=./src"]
+  - id: "Rodando tests"
+    name: "gcr.io/cloud-builders/go"
+    args: ["test", "sum"]
+    env: ["GOPATH=./src"]
+  - id: "Gerando imagem"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["build", "--tag=gcr.io/$PROJECT_ID/sum", "."]
+    images: ["gcr.io/$PROJECT_ID/sum"]
