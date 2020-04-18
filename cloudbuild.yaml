@@ -1,7 +1,11 @@
 steps:
-  - id: "Rodando tests"
+  - id: "go_test"
     name: "gcr.io/cloud-builders/go"
-    args: ["test", "."]
+    args: ["test", "sum"]
+    env: ["GOPATH=."]
+  - id: "go_run"
+    name: "gcr.io/cloud-builders/go"
+    args: ["run", "sum"]
     env: ["GOPATH=."]
   - id: "Gerando imagem"
     name: "gcr.io/cloud-builders/docker"

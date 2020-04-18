@@ -1,6 +1,6 @@
 FROM golang:1.14.2-alpine3.11 AS builder
 
-COPY ./src/ /home
+COPY ./src/sum /home
 
 WORKDIR /home
 
