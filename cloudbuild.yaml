@@ -10,4 +10,4 @@ steps:
   - id: "Gerando imagem"
     name: "gcr.io/cloud-builders/docker"
     args: ["build", "--tag=gcr.io/$PROJECT_ID/sum", "."]
-    images: ["gcr.io/$PROJECT_ID/sum"]
+images: ["gcr.io/$PROJECT_ID/sum"]
